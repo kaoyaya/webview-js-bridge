@@ -18,7 +18,7 @@ function open(action, params) {
   window.postMessage(JSON.stringify(data));
 }
 
-module.export = {
+module.exports = {
   open,
   live(id) {
     open('live', {
