@@ -22,22 +22,27 @@ module.exports = {
   open,
   live(id) {
     open('live', {
-      resourceID: id,
+      resourceValue: id,
     });
   },
   course(id) {
     open('course', {
-      resourceID: id,
+      resourceValue: id,
     });
   },
   classroom(id) {
     open('classroom', {
-      resourceID: id,
+      resourceValue: id,
     });
   },
   tiku(id) {
     open('tiku', {
-      resourceID: id,
+      resourceValue: id,
+    });
+  },
+  webview(url) {
+    open('webview', {
+      resourceValue: url,
     });
   },
   back() {
