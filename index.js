@@ -8,7 +8,7 @@
 /**
  *
  * @param action - live直播 classroom班级 course课程 tiku题库 back:webview回退 close:webview pop
- * @param params
+ * @param params.resourceValue - 资源的值
  */
 function open(action, params) {
   var data = { action: action, params: params };
