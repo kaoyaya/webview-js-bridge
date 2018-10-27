@@ -11,44 +11,46 @@
  * @param params
  */
 function open(action, params) {
-  const data = {
-    action,
-    params,
-  };
+  var data = { action: action, params: params };
   window.postMessage(JSON.stringify(data));
 }
 
 module.exports = {
-  open,
-  live(id) {
+  open: open,
+  live: function (id) {
     open('live', {
       resourceValue: id,
     });
   },
-  course(id) {
+  course: function (id) {
     open('course', {
       resourceValue: id,
     });
   },
-  classroom(id) {
+  classroom: function (id) {
     open('classroom', {
       resourceValue: id,
     });
   },
-  tiku(id) {
+  tiku: function (id) {
     open('tiku', {
       resourceValue: id,
     });
   },
-  webview(url) {
+  webview: function (url) {
     open('webview', {
       resourceValue: url,
     });
   },
-  back() {
+  login: function (url) {
+    open('login', {
+      resourceValue: url,
+    });
+  },
+  back: function () {
     open('back');
   },
-  close() {
+  close: function () {
     open('close');
   },
 };
