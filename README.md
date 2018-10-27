@@ -25,6 +25,6 @@ npm i webview-js-bridge
 - login // 跳转到登录页面
 - back // 返回页面
 - close // 关闭原生页面
-- webivew //  直接使用页面跳转即可,不需要用到,
+- webview //  直接使用页面跳转即可,不需要用到,
 
 
