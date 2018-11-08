@@ -8,10 +8,10 @@
 /**
  *
  * @param action - live直播 classroom班级 course课程 tiku题库 back:webview回退 close:webview pop
- * @param params.resourceValue - 资源的值
+ * @param params
  */
 function open(action, params) {
-  var data = { action: action, params: params };
+  var data = {action: action, params: params};
   window.postMessage(JSON.stringify(data));
 }
 
@@ -52,5 +52,11 @@ module.exports = {
   },
   close: function () {
     open('close');
+  },
+  wxpay: function (id) {
+    open('wxpay', id)
+  },
+  alipay: function (id) {
+    open('alipay', id)
   },
 };
