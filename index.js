@@ -54,9 +54,16 @@ module.exports = {
     open('close');
   },
   wxpay: function (id) {
-    open('wxpay', id)
+    open('wxpay', {
+      resourceValue: id,
+    })
   },
   alipay: function (id) {
-    open('alipay', id)
+    open('alipay', {
+      resourceValue: id,
+    })
   },
+  inPurchase:function(){
+    open('inPurchase');
+  }
 };
