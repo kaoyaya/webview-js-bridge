@@ -63,7 +63,9 @@ module.exports = {
       resourceValue: id,
     })
   },
-  inPurchase:function(){
-    open('inPurchase');
+  inPurchase: function (val) {
+    open('inPurchase', {
+      resourceValue: val,
+    });
   }
 };
