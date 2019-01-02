@@ -63,8 +63,15 @@ module.exports = {
       resourceValue: id,
     })
   },
+  // ios 内购
   inPurchase: function (val) {
     open('inPurchase', {
+      resourceValue: val,
+    });
+  },
+  // 考币支付
+  pointPay: function (val) {
+    open('pointpay', {
       resourceValue: val,
     });
   }
