@@ -12,7 +12,11 @@
  */
 function open(action, params) {
   var data = {action: action, params: params};
-  window.postMessage(JSON.stringify(data));
+  try {
+    window.webkit.messageHandlers.reactNative.postMessage(JSON.stringify(data));
+  } catch (e) {
+    window.postMessage(JSON.stringify(data));
+  }
 }
 
 module.exports = {
