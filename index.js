@@ -11,7 +11,7 @@
  * @param params
  */
 function open(action, params) {
-  var data = {action: action, params: params};
+  var data = { action: action, params: params };
   try {
     window.webkit.messageHandlers.reactNative.postMessage(JSON.stringify(data));
   } catch (e) {
@@ -19,7 +19,7 @@ function open(action, params) {
   }
 }
 
-module.exports = {
+export default {
   open: open,
   live: function (id) {
     open('live', {
@@ -60,12 +60,12 @@ module.exports = {
   wxpay: function (id) {
     open('wxpay', {
       resourceValue: id,
-    })
+    });
   },
   alipay: function (id) {
     open('alipay', {
       resourceValue: id,
-    })
+    });
   },
   // ios 内购
   inPurchase: function (val) {
@@ -78,5 +78,5 @@ module.exports = {
     open('pointpay', {
       resourceValue: val,
     });
-  }
+  },
 };

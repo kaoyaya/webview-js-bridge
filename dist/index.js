@@ -1,17 +1,22 @@
 (function (global, factory) {
   if (typeof define === "function" && define.amd) {
-    define([], factory);
+    define(["exports"], factory);
   } else if (typeof exports !== "undefined") {
-    factory();
+    factory(exports);
   } else {
     var mod = {
       exports: {}
     };
-    factory();
+    factory(mod.exports);
     global.index = mod.exports;
   }
-})(this, function () {
+})(this, function (_exports) {
   "use strict";
+
+  Object.defineProperty(_exports, "__esModule", {
+    value: true
+  });
+  _exports.default = void 0;
 
   /**
    * webview 跟 app 通信
@@ -38,7 +43,7 @@
     }
   }
 
-  module.exports = {
+  var _default = {
     open: open,
     live: function live(id) {
       open('live', {
@@ -99,4 +104,5 @@
       });
     }
   };
+  _exports.default = _default;
 });
