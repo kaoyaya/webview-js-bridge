@@ -2,8 +2,9 @@
   "name": "webview-js-bridge",
   "version": "1.4.0",
   "description": "",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
+    "build": "babel index.js -d dist",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -15,5 +16,10 @@
   "bugs": {
     "url": "https://github.com/kaoyaya/webview-js-bridge/issues"
   },
-  "homepage": "https://github.com/kaoyaya/webview-js-bridge#readme"
+  "homepage": "https://github.com/kaoyaya/webview-js-bridge#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.3.3",
+    "@babel/preset-env": "^7.3.1"
+  }
 }
