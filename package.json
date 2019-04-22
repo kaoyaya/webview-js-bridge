@@ -1,6 +1,6 @@
 {
-  "name": "webview-js-bridge",
-  "version": "1.5.0",
+  "name": "kaoyaya@fe-webview-js-bridge",
+  "version": "1.0.0",
   "description": "",
   "main": "dist/index.js",
   "scripts": {
