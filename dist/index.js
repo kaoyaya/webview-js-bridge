@@ -24,12 +24,37 @@
    * @author: LiuZiHao/ltinyho@gmail.com
    * Date: 2018/10/18 下午5:17
    */
+  // Oc webview 设置
+  function setupWebViewJavascriptBridge(callback) {
+    if (window.WebViewJavascriptBridge) {
+      return callback(WebViewJavascriptBridge);
+    }
 
+    if (window.WVJBCallbacks) {
+      return window.WVJBCallbacks.push(callback);
+    }
+
+    window.WVJBCallbacks = [callback];
+    var WVJBIframe = document.createElement('iframe');
+    WVJBIframe.style.display = 'none';
+    WVJBIframe.src = 'https://__bridge_loaded__';
+    document.documentElement.appendChild(WVJBIframe);
+    setTimeout(function () {
+      document.documentElement.removeChild(WVJBIframe);
+    }, 0);
+  }
+
+  var bridge = null;
+  setupWebViewJavascriptBridge(function (b) {
+    /* Initialize your app here */
+    bridge = b;
+  });
   /**
    *
    * @param action - live直播 classroom班级 course课程 tiku题库 back:webview回退 close:webview pop
    * @param params
    */
+
   function open(action, params) {
     var data = {
       action: action,
@@ -37,9 +62,19 @@
     };
 
     try {
-      window.webkit.messageHandlers.reactNative.postMessage(JSON.stringify(data));
+      // 调用 oc 不用转成json
+      bridge.callHandler('jsToOc', data, function responseCallback(responseData) {
+        console.log('JS received response:', responseData);
+      }); // js 调 OC
     } catch (e) {
-      window.postMessage(JSON.stringify(data));
+      console.log(e);
+    }
+
+    try {
+      var res = JSON.stringify(data);
+      window.postMessage(res);
+    } catch (e) {
+      console.log(e);
     }
   }
 
@@ -98,11 +133,18 @@
       });
     },
     // 考币支付
-    pointPay: function pointPay(val) {
+    pointpay: function pointpay(val) {
       open('pointpay', {
         resourceValue: val
       });
-    }
+    },
+    // 处理 ios webview 请求
+    handleOc: function handleOc(cb) {
+      bridge.registerHandler('ocToJs', function (data) {
+        cb(data);
+      });
+    },
+    bridge: bridge
   };
   _exports.default = _default;
 });

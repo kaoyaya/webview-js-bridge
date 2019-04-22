@@ -13,7 +13,7 @@ function setupWebViewJavascriptBridge(callback) {
     return window.WVJBCallbacks.push(callback);
   }
   window.WVJBCallbacks = [callback];
-  var WVJBIframe = document.createElement('iframe');
+  const WVJBIframe = document.createElement('iframe');
   WVJBIframe.style.display = 'none';
   WVJBIframe.src = 'https://__bridge_loaded__';
   document.documentElement.appendChild(WVJBIframe);
@@ -34,7 +34,7 @@ setupWebViewJavascriptBridge(function (b) {
  * @param params
  */
 function open(action, params) {
-  var data = {action: action, params: params};
+  const data = {action: action, params: params};
   try {
     // 调用 oc 不用转成json
     bridge.callHandler('jsToOc', data, function responseCallback(responseData) {
@@ -53,67 +53,67 @@ function open(action, params) {
 }
 
 export default {
-  open: open,
-  live: function (id) {
+  open,
+  live(id) {
     open('live', {
       resourceValue: id,
     });
   },
-  course: function (id) {
+  course(id) {
     open('course', {
       resourceValue: id,
     });
   },
-  classroom: function (id) {
+  classroom(id) {
     open('classroom', {
       resourceValue: id,
     });
   },
-  tiku: function (id) {
+  tiku(id) {
     open('tiku', {
       resourceValue: id,
     });
   },
-  webview: function (url) {
+  webview(url) {
     open('webview', {
       resourceValue: url,
     });
   },
-  login: function (url) {
+  login(url) {
     open('login', {
       resourceValue: url,
     });
   },
-  back: function () {
+  back() {
     open('back');
   },
-  close: function () {
+  close() {
     open('close');
   },
-  wxpay: function (id) {
+  wxpay(id) {
     open('wxpay', {
       resourceValue: id,
     });
   },
-  alipay: function (id) {
+  alipay(id) {
     open('alipay', {
       resourceValue: id,
     });
   },
   // ios 内购
-  inPurchase: function (val) {
+  inPurchase(val) {
     open('inPurchase', {
       resourceValue: val,
     });
   },
   // 考币支付
-  pointpay: function (val) {
+  pointpay(val) {
     open('pointpay', {
       resourceValue: val,
     });
   },
   // 处理 ios webview 请求
-  handleOc: function (cb) {
+  handleOc(cb) {
     bridge.registerHandler('ocToJs', function (data) {
       cb(data);
     });
