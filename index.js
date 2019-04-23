@@ -114,9 +114,12 @@ export default {
   },
   // 处理 ios webview 请求
   handleOc(cb) {
-    bridge.registerHandler('ocToJs', function (data) {
-      cb(data);
-    });
+    setTimeout(() => {
+      bridge.registerHandler('ocToJs', function (data, responseCallback) {
+        cb(data);
+        responseCallback(data);
+      });
+    }, 200);
   },
   bridge: bridge,
 };

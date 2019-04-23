@@ -140,9 +140,12 @@
     },
     // 处理 ios webview 请求
     handleOc: function handleOc(cb) {
-      bridge.registerHandler('ocToJs', function (data) {
-        cb(data);
-      });
+      setTimeout(function () {
+        bridge.registerHandler('ocToJs', function (data, responseCallback) {
+          cb(data);
+          responseCallback(data);
+        });
+      }, 200);
     },
     bridge: bridge
   };
