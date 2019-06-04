@@ -24,24 +24,35 @@
    * @author: LiuZiHao/ltinyho@gmail.com
    * Date: 2018/10/18 下午5:17
    */
-  // Oc webview 设置
+  function isIos() {
+    var u = navigator.userAgent;
+    return !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/);
+  }
+
+  function isInApp() {
+    return document.cookie.includes("app_version");
+  } // Oc webview 设置
+
+
   function setupWebViewJavascriptBridge(callback) {
-    if (window.WebViewJavascriptBridge) {
-      return callback(WebViewJavascriptBridge);
-    }
+    if (isIos() && isInApp()) {
+      if (window.WebViewJavascriptBridge) {
+        return callback(WebViewJavascriptBridge);
+      }
 
-    if (window.WVJBCallbacks) {
-      return window.WVJBCallbacks.push(callback);
-    }
+      if (window.WVJBCallbacks) {
+        return window.WVJBCallbacks.push(callback);
+      }
 
-    window.WVJBCallbacks = [callback];
-    var WVJBIframe = document.createElement('iframe');
-    WVJBIframe.style.display = 'none';
-    WVJBIframe.src = 'https://__bridge_loaded__';
-    document.documentElement.appendChild(WVJBIframe);
-    setTimeout(function () {
-      document.documentElement.removeChild(WVJBIframe);
-    }, 0);
+      window.WVJBCallbacks = [callback];
+      var WVJBIframe = document.createElement('iframe');
+      WVJBIframe.style.display = 'none';
+      WVJBIframe.src = 'https://__bridge_loaded__';
+      document.documentElement.appendChild(WVJBIframe);
+      setTimeout(function () {
+        document.documentElement.removeChild(WVJBIframe);
+      }, 0);
+    }
   }
 
   var bridge = null;
