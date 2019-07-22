@@ -7,11 +7,11 @@
 
 function isIos() {
   const u = navigator.userAgent;
-  return !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/)
+  return !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/);
 }
 
 function isInApp() {
-  return document.cookie.includes("app_version")
+  return document.cookie.indexOf('app_version') !== -1;
 }
 
 // Oc webview 设置
@@ -46,7 +46,7 @@ setupWebViewJavascriptBridge(function (b) {
  * @param params
  */
 function open(action, params) {
-  const data = {action: action, params: params};
+  const data = { action: action, params: params };
   try {
     // 调用 oc 不用转成json
     bridge.callHandler('jsToOc', data, function responseCallback(responseData) {

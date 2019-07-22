@@ -30,7 +30,7 @@
   }
 
   function isInApp() {
-    return document.cookie.includes("app_version");
+    return document.cookie.indexOf('app_version') !== -1;
   } // Oc webview 设置
 
 
