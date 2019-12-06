@@ -137,6 +137,13 @@
         resourceValue: id
       });
     },
+    //花呗支付,num-分期期数
+    creditPay: function creditPay(id, num) {
+      open('creditPay', {
+        resourceValue: id,
+        num: num
+      });
+    },
     // ios 内购
     inPurchase: function inPurchase(val) {
       open('inPurchase', {
