@@ -131,6 +131,12 @@ export default {
       resourceValue: val,
     });
   },
+  // 每日一练跳转
+  dailyPractice: function dailyPractice(val) {
+    open('dailyPractice', {
+      resourceValue: val
+    });
+  },
   // 处理 ios webview 请求
   handleOc(cb) {
     setTimeout(() => {
