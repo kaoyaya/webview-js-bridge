@@ -96,9 +96,10 @@
         resourceValue: id
       });
     },
-    course: function course(id) {
+    course: function course(id, last_learn_lesson) {
       open('course', {
-        resourceValue: id
+        resourceValue: id,
+        last_learn_lesson: last_learn_lesson
       });
     },
     classroom: function classroom(id) {

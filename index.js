@@ -71,9 +71,10 @@ export default {
       resourceValue: id,
     });
   },
-  course(id) {
+  course(id,last_learn_lesson) {
     open('course', {
       resourceValue: id,
+      last_learn_lesson: last_learn_lesson,
     });
   },
   classroom(id) {
