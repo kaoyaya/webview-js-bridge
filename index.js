@@ -46,7 +46,7 @@ setupWebViewJavascriptBridge(function (b) {
  * @param params
  */
 function open(action, params) {
-  const data = { action: action, params: params };
+  const data = {action: action, params: params};
   try {
     // 调用 oc 不用转成json
     bridge.callHandler('jsToOc', data, function responseCallback(responseData) {
@@ -71,12 +71,17 @@ export default {
       resourceValue: id,
     });
   },
-  course(id,last_learn_lesson) {
+  course(id) {
     open('course', {
       resourceValue: id,
-      last_learn_lesson: last_learn_lesson,
     });
   },
+  // course(id,last_learn_lesson) {
+  //   open('course', {
+  //     resourceValue: id,
+  //     last_learn_lesson: last_learn_lesson,
+  //   });
+  // },
   classroom(id) {
     open('classroom', {
       resourceValue: id,
@@ -135,7 +140,7 @@ export default {
   // 每日一练跳转
   dailyPractice: function dailyPractice(val) {
     open('dailyPractice', {
-      resourceValue: val
+      resourceValue: val,
     });
   },
   // 处理 ios webview 请求
