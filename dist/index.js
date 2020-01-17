@@ -96,17 +96,17 @@
         resourceValue: id
       });
     },
-    course: function course(id) {
-      open('course', {
-        resourceValue: id
-      });
-    },
-    // course(id,last_learn_lesson) {
+    // course(id) {
     //   open('course', {
     //     resourceValue: id,
-    //     last_learn_lesson: last_learn_lesson,
     //   });
     // },
+    course: function course(id, last_learn_lesson) {
+      open('course', {
+        resourceValue: id,
+        lessonID: last_learn_lesson
+      });
+    },
     classroom: function classroom(id) {
       open('classroom', {
         resourceValue: id
