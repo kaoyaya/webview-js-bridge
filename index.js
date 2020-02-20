@@ -125,6 +125,13 @@ export default {
       num: num,
     });
   },
+  // 京东支付
+  jdPay :function jdPay(id, num){
+    open('jdPay', {
+      resourceValue: id,
+      num: num,
+    });
+  },
   // ios 内购
   inPurchase(val) {
     open('inPurchase', {
