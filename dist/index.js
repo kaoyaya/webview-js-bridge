@@ -10,7 +10,7 @@
     factory(mod.exports);
     global.index = mod.exports;
   }
-})(this, function (_exports) {
+})(typeof globalThis !== "undefined" ? globalThis : typeof self !== "undefined" ? self : this, function (_exports) {
   "use strict";
 
   Object.defineProperty(_exports, "__esModule", {
@@ -146,6 +146,13 @@
     //花呗支付,num-分期期数
     creditPay: function creditPay(id, num) {
       open('creditPay', {
+        resourceValue: id,
+        num: num
+      });
+    },
+    // 京东支付
+    jdPay: function jdPay(id, num) {
+      open('jdPay', {
         resourceValue: id,
         num: num
       });
