@@ -150,6 +150,12 @@ export default {
       resourceValue: val,
     });
   },
+  // 课程中心页跳转
+  MyStudyCenter: function MyStudyCenter(val) {
+    open('MyStudyCenter', {
+      index: val,
+    });
+  },
   // 处理 ios webview 请求
   handleOc(cb) {
     setTimeout(() => {
