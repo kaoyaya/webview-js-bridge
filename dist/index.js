@@ -1,22 +1,25 @@
 (function (global, factory) {
   if (typeof define === "function" && define.amd) {
-    define(["exports"], factory);
+    define(["exports", "@kaoyaya/fe-utils"], factory);
   } else if (typeof exports !== "undefined") {
-    factory(exports);
+    factory(exports, require("@kaoyaya/fe-utils"));
   } else {
     var mod = {
       exports: {}
     };
-    factory(mod.exports);
+    factory(mod.exports, global.feUtils);
     global.index = mod.exports;
   }
-})(typeof globalThis !== "undefined" ? globalThis : typeof self !== "undefined" ? self : this, function (_exports) {
+})(this, function (_exports, _feUtils) {
   "use strict";
 
   Object.defineProperty(_exports, "__esModule", {
     value: true
   });
   _exports.default = void 0;
+  _feUtils = _interopRequireDefault(_feUtils);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
   /**
    * webview 跟 app 通信
@@ -25,8 +28,9 @@
    * Date: 2018/10/18 下午5:17
    */
   function isIos() {
-    var u = navigator.userAgent;
-    return !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/);
+    // const u = navigator.userAgent;
+    // return !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/);
+    return _feUtils.default.deviceInfo('ios');
   }
 
   function isInApp() {

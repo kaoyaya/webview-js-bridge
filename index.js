@@ -1,3 +1,5 @@
+import kyyUtils from '@kaoyaya/fe-utils';
+
 /**
  * webview 跟 app 通信
  * @file: index.js
@@ -6,8 +8,9 @@
  */
 
 function isIos() {
-  const u = navigator.userAgent;
-  return !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/);
+  // const u = navigator.userAgent;
+  // return !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/);
+  return kyyUtils.deviceInfo('ios');
 }
 
 function isInApp() {
@@ -76,7 +79,7 @@ export default {
   //     resourceValue: id,
   //   });
   // },
-  course(id,last_learn_lesson) {
+  course(id, last_learn_lesson) {
     open('course', {
       resourceValue: id,
       lessonID: last_learn_lesson,
@@ -126,7 +129,7 @@ export default {
     });
   },
   // 京东支付
-  jdPay :function jdPay(id, num){
+  jdPay: function jdPay(id, num) {
     open('jdPay', {
       resourceValue: id,
       num: num,
