@@ -1,6 +1,6 @@
 {
   "name": "@kaoyaya/fe-webview-js-bridge",
-  "version": "1.2.7",
+  "version": "1.2.8",
   "description": "",
   "main": "dist/index.js",
   "scripts": {
@@ -21,5 +21,8 @@
     "@babel/cli": "^7.2.3",
     "@babel/core": "^7.3.3",
     "@babel/preset-env": "^7.3.1"
+  },
+  "dependencies": {
+    "@kaoyaya/fe-utils": "^1.1.4"
   }
 }
