@@ -6,31 +6,6 @@ import kyyUtils from '@kaoyaya/fe-utils';
  * @author: LiuZiHao/ltinyho@gmail.com
  * Date: 2018/10/18 下午5:17
  */
-window.onload = function () {
-    let timer = null
-    let startTime = ''
-    let endTime = ''
-    const label = document.querySelector('img')
-
-    label.addEventListener('touchstart', function () {
-        startTime = +new Date()
-        timer = setTimeout(function () {
-            // deleteBtn.style.display = 'block'
-            console.log(44444444)
-            console.log(label)
-        }, 700)
-    })
-
-    label.addEventListener('touchend', function () {
-        endTime = +new Date()
-        clearTimeout(timer)
-        if (endTime - startTime < 700) {
-            // 处理点击事件
-            console.log(12321312312312)
-            label.classList.add('selected')
-        }
-    })
-}
 
 function isIos() {
     // const u = navigator.userAgent;
@@ -192,6 +167,11 @@ export default {
                 responseCallback(data);
             });
         }, 200);
+    },
+    longKeyImgPress(val) {
+        open('longKeyImgPress', {
+            src: val,
+        });
     },
     bridge: bridge,
 };
