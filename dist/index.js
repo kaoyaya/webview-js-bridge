@@ -10,7 +10,7 @@
     factory(mod.exports, global.feUtils);
     global.index = mod.exports;
   }
-})(this, function (_exports, _feUtils) {
+})(typeof globalThis !== "undefined" ? globalThis : typeof self !== "undefined" ? self : this, function (_exports, _feUtils) {
   "use strict";
 
   Object.defineProperty(_exports, "__esModule", {
@@ -193,6 +193,11 @@
           responseCallback(data);
         });
       }, 200);
+    },
+    longKeyImgPress: function longKeyImgPress(val) {
+      open('longKeyImgPress', {
+        src: val
+      });
     },
     bridge: bridge
   };
