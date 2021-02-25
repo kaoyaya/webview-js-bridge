@@ -10,7 +10,7 @@
     factory(mod.exports, global.feUtils);
     global.index = mod.exports;
   }
-})(typeof globalThis !== "undefined" ? globalThis : typeof self !== "undefined" ? self : this, function (_exports, _feUtils) {
+})(this, function (_exports, _feUtils) {
   "use strict";
 
   Object.defineProperty(_exports, "__esModule", {
@@ -198,6 +198,10 @@
       open('longKeyImgPress', {
         src: val
       });
+    },
+    // 进入新版题库提醒
+    enterNewQuestion: function enterNewQuestion() {
+      open('getIntoQuestion');
     },
     bridge: bridge
   };
