@@ -173,5 +173,9 @@ export default {
             src: val,
         });
     },
+    // 进入新版题库提醒
+    enterNewQuestion: function enterNewQuestion() {
+        open('getIntoQuestion')
+    },
     bridge: bridge,
 };
