@@ -200,8 +200,10 @@
       });
     },
     // 进入新版题库提醒
-    enterNewQuestion: function enterNewQuestion() {
-      open('getIntoQuestion');
+    enterNewQuestion: function enterNewQuestion(val) {
+      open('getIntoQuestion', {
+        value: val
+      });
     },
     bridge: bridge
   };
