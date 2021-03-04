@@ -174,8 +174,12 @@ export default {
     });
   },
   // 进入新版题库提醒
-  enterNewQuestion(val) {
-    open('getIntoQuestion', {value: val})
+  enterNewQuestion() {
+    open('getIntoQuestion')
+  },
+  // 进入新版题库提醒
+  newGnterNewQuestion(val) {
+    open('newGetIntoQuestion', {value: val})
   },
   bridge: bridge,
 };
