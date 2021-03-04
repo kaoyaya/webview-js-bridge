@@ -179,7 +179,7 @@ export default {
   },
   // 进入新版题库提醒
   newEnterNewQuestion(val) {
-    open('newGetIntoQuestion', {value: val})
+    open('newEnterNewQuestion', {value: val})
   },
   bridge: bridge,
 };
