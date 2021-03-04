@@ -178,7 +178,7 @@ export default {
     open('getIntoQuestion')
   },
   // 进入新版题库提醒
-  newGnterNewQuestion(val) {
+  newEnterNewQuestion(val) {
     open('newGetIntoQuestion', {value: val})
   },
   bridge: bridge,

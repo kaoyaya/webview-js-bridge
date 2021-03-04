@@ -204,7 +204,7 @@
       open('getIntoQuestion');
     },
     // 进入新版题库提醒
-    newGnterNewQuestion: function newGnterNewQuestion(val) {
+    newEnterNewQuestion: function newEnterNewQuestion(val) {
       open('newGetIntoQuestion', {
         value: val
       });
