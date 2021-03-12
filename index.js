@@ -181,5 +181,17 @@ export default {
   newEnterNewQuestion(val) {
     open('newEnterNewQuestion', {value: val})
   },
+  // 进入题库具体题目
+  enterTikuQa(id) {
+    open('enterTikuQa', {
+      resourceValue: id,
+    })
+  },
+// 进入题库具体题目的视频
+  enterTikuQaVedio(id) {
+    open('enterTikuQaVedio', {
+      resourceValue: id,
+    })
+  },
   bridge: bridge,
 };

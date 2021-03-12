@@ -209,6 +209,18 @@
         value: val
       });
     },
+    // 进入题库具体题目
+    enterTikuQa: function enterTikuQa(id) {
+      open('enterTikuQa', {
+        resourceValue: id
+      });
+    },
+    // 进入题库具体题目的视频
+    enterTikuQaVedio: function enterTikuQaVedio(id) {
+      open('enterTikuQaVedio', {
+        resourceValue: id
+      });
+    },
     bridge: bridge
   };
   _exports.default = _default;
