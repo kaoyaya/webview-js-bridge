@@ -184,13 +184,14 @@ export default {
   // 进入题库具体题目
   enterTikuQa(id) {
     open('enterTikuQa', {
-      resourceValue: id,
+      questionId: id,
     })
   },
 // 进入题库具体题目的视频
-  enterTikuQaVedio(id) {
+  enterTikuQaVedio(videoId, id) {
     open('enterTikuQaVedio', {
-      resourceValue: id,
+      videoId: videoId,
+      questionId: id,
     })
   },
   bridge: bridge,

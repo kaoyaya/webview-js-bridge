@@ -212,13 +212,14 @@
     // 进入题库具体题目
     enterTikuQa: function enterTikuQa(id) {
       open('enterTikuQa', {
-        resourceValue: id
+        questionId: id
       });
     },
     // 进入题库具体题目的视频
-    enterTikuQaVedio: function enterTikuQaVedio(id) {
+    enterTikuQaVedio: function enterTikuQaVedio(videoId, id) {
       open('enterTikuQaVedio', {
-        resourceValue: id
+        videoId: videoId,
+        questionId: id
       });
     },
     bridge: bridge
