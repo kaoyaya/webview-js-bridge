@@ -209,6 +209,13 @@
         value: val
       });
     },
+    // 打开rn页面对应的rn路由
+    openPage: function openPage(val) {
+      open('openPage', {
+        routeName: val.routeName,
+        routeParams: val.routeParams
+      });
+    },
     // 进入题库具体题目
     enterTikuQa: function enterTikuQa(id) {
       open('enterTikuQa', {
