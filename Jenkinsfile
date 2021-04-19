@@ -5,12 +5,30 @@ pipeline {
         NAME = 'webview-js-bridge'
         PROFILE = 'fc'
     }
-
+     triggers {
+            GenericTrigger(
+                genericVariables: [
+                  [key: 'ref', value: '$.ref'],
+                  [key: 'repositoryURL', value: '$.https://github.com/kaoyaya/webview-js-bridge.git'],
+                  [key: 'branch', value: '$.fc']
+                ],
+                token: 'token-remote-test' ,
+                causeString: '$ref' ,
+                printContributedVariables: true,
+                printPostContent: true
+            )
+        }
     stages {
         stage('下载代码') {
             steps {
                 echo '****************************** download code start... ******************************'
-                git branch: 'fc', credentialsId: '	eb31cb77-1afb-42b6-922d-3ec28c31ed6a', url: 'https://github.com/kaoyaya/webview-js-bridge.git'
+                checkout([$class: 'GitSCM',
+                                            branches: [[name: "${branch}"]],
+                                            doGenerateSubmoduleConfigurations: false,
+                                            extensions: [],
+                                            submoduleCfg: [],
+                                            userRemoteConfigs: [[credentialsId: 'eb31cb77-1afb-42b6-922d-3ec28c31ed6a',
+                                                                url: "${repositoryURL}"]]])
             }
         }
 
