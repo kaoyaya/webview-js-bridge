@@ -19,6 +19,13 @@ pipeline {
             )
         }
     stages {
+            stage('show-param') {
+                steps {
+                    echo '代码仓库：$repositoryURL'
+                    echo '代码分支：$branch'
+                }
+            }
+
         stage('下载代码') {
             steps {
                 echo '****************************** download code start... ******************************'
