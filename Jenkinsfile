@@ -13,6 +13,8 @@ pipeline {
                 git branch: 'fc', credentialsId: '	eb31cb77-1afb-42b6-922d-3ec28c31ed6a', url: 'https://github.com/kaoyaya/webview-js-bridge.git'
             }
         }
+
+        
         stage('vue环境准备') {
             steps {
                 echo '****************************** vue start... ******************************'
