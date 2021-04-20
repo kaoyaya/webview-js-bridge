@@ -14,8 +14,6 @@ pipeline {
             }
         }
 
-        
-
 
         stage('vue环境准备') {
             steps {
