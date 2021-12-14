@@ -201,5 +201,11 @@ export default {
       questionId: id,
     })
   },
+  // 唤醒小程序
+  openMiniApp(scheme) {
+    open('openMiniApp', {
+      scheme: scheme,
+    })
+  },
   bridge: bridge,
 };
