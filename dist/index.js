@@ -10,7 +10,7 @@
     factory(mod.exports, global.feUtils);
     global.index = mod.exports;
   }
-})(this, function (_exports, _feUtils) {
+})(typeof globalThis !== "undefined" ? globalThis : typeof self !== "undefined" ? self : this, function (_exports, _feUtils) {
   "use strict";
 
   Object.defineProperty(_exports, "__esModule", {
@@ -230,6 +230,12 @@
       open('enterTikuQaVedio', {
         videoId: videoId,
         questionId: id
+      });
+    },
+    // 唤醒小程序
+    openMiniApp: function openMiniApp(scheme) {
+      open('openMiniApp', {
+        scheme: scheme
       });
     },
     bridge: bridge
