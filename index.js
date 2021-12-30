@@ -207,5 +207,9 @@ export default {
       scheme: scheme,
     })
   },
+  // 代付
+  friendPayment(shareInfo) {
+    open('friendPayment', shareInfo)
+  },
   bridge: bridge,
 };

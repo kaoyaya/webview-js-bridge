@@ -238,6 +238,10 @@
         scheme: scheme
       });
     },
+    // 代付
+    friendPayment: function friendPayment(shareInfo) {
+      open('friendPayment', shareInfo);
+    },
     bridge: bridge
   };
   _exports.default = _default;
