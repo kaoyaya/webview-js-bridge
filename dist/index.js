@@ -242,6 +242,14 @@
     friendPayment: function friendPayment(shareInfo) {
       open('friendPayment', shareInfo);
     },
+    //认证状态
+    certification: function certification(status) {
+      open('certification', status);
+    },
+    //签署状态
+    signResult: function signResult(status) {
+      open('signResult', status);
+    },
     bridge: bridge
   };
   _exports.default = _default;
