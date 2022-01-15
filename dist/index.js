@@ -242,13 +242,9 @@
     friendPayment: function friendPayment(shareInfo) {
       open('friendPayment', shareInfo);
     },
-    //认证状态
-    certification: function certification(status) {
-      open('certification', status);
-    },
-    //签署状态
-    signResult: function signResult(status) {
-      open('signResult', status);
+    //原生处理返回
+    handleNativeBack: function handleNativeBack(url) {
+      open('handleNativeBack', url);
     },
     bridge: bridge
   };

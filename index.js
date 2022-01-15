@@ -211,13 +211,9 @@ export default {
   friendPayment(shareInfo) {
     open('friendPayment', shareInfo)
   },
-  //认证状态
-  certification(status) {
-    open('certification', status)
-  },
-  //签署状态
-  signResult(status) {
-    open('signResult', status)
+  //原生处理返回
+  handleNativeBack(url) {
+    open('handleNativeBack',url)
   },
   bridge: bridge,
 };
