@@ -246,6 +246,10 @@
     handleNativeBack: function handleNativeBack(url) {
       open('handleNativeBack', url);
     },
+    // 银联支付
+    unionPay: function unionPay(isUnionPay) {
+      open('unionPay', isUnionPay);
+    },
     bridge: bridge
   };
   _exports.default = _default;

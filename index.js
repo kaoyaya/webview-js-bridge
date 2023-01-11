@@ -215,5 +215,9 @@ export default {
   handleNativeBack(url) {
     open('handleNativeBack',url)
   },
+  // 银联支付
+  unionPay(isUnionPay) {
+    open('unionPay', isUnionPay)
+  },
   bridge: bridge,
 };
