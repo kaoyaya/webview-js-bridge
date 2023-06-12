@@ -250,6 +250,9 @@
     unionPay: function unionPay(isUnionPay) {
       open('unionPay', isUnionPay);
     },
+    enterCustomer: function enterCustomer() {
+      open('enterCustomer');
+    },
     bridge: bridge
   };
   _exports.default = _default;

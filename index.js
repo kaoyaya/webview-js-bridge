@@ -219,5 +219,8 @@ export default {
   unionPay(isUnionPay) {
     open('unionPay', isUnionPay)
   },
+  enterCustomer() {
+    open('enterCustomer')
+  },
   bridge: bridge,
 };
