@@ -222,5 +222,8 @@ export default {
   enterCustomer() {
     open('enterCustomer')
   },
+  reservePhone: function reservePhone() {
+    open('reservePhone');
+  },
   bridge: bridge,
 };

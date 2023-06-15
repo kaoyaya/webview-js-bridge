@@ -253,6 +253,9 @@
     enterCustomer: function enterCustomer() {
       open('enterCustomer');
     },
+    reservePhone: function reservePhone() {
+      open('reservePhone');
+    },
     bridge: bridge
   };
   _exports.default = _default;
