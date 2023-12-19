@@ -256,6 +256,9 @@
     reservePhone: function reservePhone() {
       open('reservePhone');
     },
+    toggleImWebPageBackControl: function toggleImWebPageBackControl(isWebPageControl) {
+      open('toggleImWebPageBackControl', isWebPageControl);
+    },
     bridge: bridge
   };
   _exports.default = _default;

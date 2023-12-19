@@ -225,5 +225,8 @@ export default {
   reservePhone: function reservePhone() {
     open('reservePhone');
   },
+  toggleImWebPageBackControl: function (isWebPageControl) {
+    open('toggleImWebPageBackControl', isWebPageControl);
+  },
   bridge: bridge,
 };
